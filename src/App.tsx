@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/onboarding" element={<OnboardingFlow />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/" element={<Navigate to="/onboarding" replace />} />
+            <Route path="/" element={<Navigate to="/onboarding\" replace />} />
           </Routes>
         </div>
       </BrowserRouter>
