@@ -1,0 +1,23 @@
+{
+  "name": "VPN سرویس",
+  "short_name": "VPN",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2828FF",
+  "theme_color": "#2828FF",
+  "description": "A powerful VPN service",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
