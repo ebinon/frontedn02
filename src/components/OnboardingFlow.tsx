@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import OnboardingSlide from './OnboardingSlide';
 import NavigationDots from './NavigationDots';
 import NavigationArrows from './NavigationArrows';
@@ -37,6 +38,7 @@ const slides = [
 ];
 
 const OnboardingFlow: React.FC = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
@@ -74,8 +76,8 @@ const OnboardingFlow: React.FC = () => {
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) {
-      // The app is already installed or not installable
-      alert('این اپلیکیشن قبلاً نصب شده است یا قابل نصب نیست.');
+      // If PWA is not available or already installed, navigate to profile
+      navigate('/profile');
       return;
     }
 
@@ -91,6 +93,9 @@ const OnboardingFlow: React.FC = () => {
     } else {
       console.log('User dismissed the A2HS prompt');
     }
+    
+    // Navigate to profile page regardless of the installation choice
+    navigate('/profile');
   };
 
   const isLastSlide = currentSlide === slides.length - 1;
